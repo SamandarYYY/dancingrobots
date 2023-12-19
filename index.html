@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - The Last Experience</title>
+  <!--
+today: be happy
+tomorrow: be happy
+everyday: be happy
+-->
+
+
+<script>
+// Robots don't want to stop dancing !
+// therefore decided to restore original RAF
+if (window.location.href.indexOf("fullcpgrid") > -1) {
+	document.addEventListener('DOMContentLoaded', function() {
+		const original = document.createElement('iframe');
+		original.style.display = 'none';
+		document.body.appendChild(original);
+		window.requestAnimationFrame = original.contentWindow.requestAnimationFrame;
+	}, false);
+}
+</script><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas></canvas>
+
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
